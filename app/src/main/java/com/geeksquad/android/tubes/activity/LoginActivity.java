@@ -1,18 +1,19 @@
-package com.geeksquad.android.tubes;
+package com.geeksquad.android.tubes.activity;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
-public class MainActivity extends Activity {
+import com.geeksquad.android.tubes.R;
+import com.geeksquad.android.tubes.entity.Order;
+
+public class LoginActivity extends Activity {
     public EditText edUser;
     public EditText edPass;
     public Button login;
@@ -22,22 +23,24 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         edUser = (EditText) findViewById(R.id.edUsername);
         edPass = (EditText) findViewById(R.id.edPassword);
         login = (Button) findViewById(R.id.login);
-        String stuser = edUser.getText().toString();
-        String stpass = edPass.getText().toString();
+
     }
 
-    public  void login(View v){
+    public void login(View v) {
         String stuser = edUser.getText().toString();
         String stpass = edPass.getText().toString();
 
-        if(stuser.equals("admin") && stpass.equals("admin")){
-            Intent intent = new Intent(MainActivity.this, login.class);
+        if (stuser.equals(Order.USERNAME) && stpass.equals(Order.PASSWORD)) {
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
+        } else {
+            Toast.makeText(this, "Username atau password tidak sesuai", Toast.LENGTH_SHORT).show();
         }
+
     }
 
 
