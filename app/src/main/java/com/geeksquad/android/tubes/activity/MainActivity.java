@@ -1,7 +1,7 @@
 package com.geeksquad.android.tubes.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -11,7 +11,7 @@ import com.geeksquad.android.tubes.entity.Order;
 
 import java.util.ArrayList;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
     RecyclerView.LayoutManager layoutManager;
@@ -22,7 +22,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         no_order = getResources().getStringArray(R.array.order_no);
         date_order = getResources().getStringArray(R.array.time_order);
         int i = 0;
