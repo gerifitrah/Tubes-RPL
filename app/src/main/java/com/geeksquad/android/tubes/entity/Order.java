@@ -1,36 +1,61 @@
 package com.geeksquad.android.tubes.entity;
 
+import java.util.List;
+
 /**
  * Created by ASUS on 25/10/2017.
  */
 
 public class Order {
 
-    private String mOrderNumber, mOrderDate;
 
-    public static String USERNAME = "admin" ;
-    public static String PASSWORD = "jasuke" ;
+    public static String USERNAME = "admin";
+    public static String PASSWORD = "jasuke";
+
+    public static final String BASE_PATH = "http://192.168.1.9/restoran/";
+    public static final String JSON_REPLY_MENU = "server.php?operasi=view";
+
+    public static String DUMMY_RESPONSE =
+            "[{\"no_meja\":8,\"tanggal\":\"2017-11-08  14:10:00\",\"items\":3,\"detail\":[{\"produk\":\"Wajit\",\"qty\":2},{\"produk\":\"Bakso\",\"qty\":2},{\"produk\":\"Bajigur\",\"qty\":2}],\"keterangan\":\"Wajitnya jangan pake saus tartar\"}," +
+                    "{\"no_meja\":1,\"tanggal\":\"2017-11-08  09:10:00\",\"items\":3,\"detail\":[{\"produk\":\"Tiramisu\",\"qty\":2},{\"produk\":\"Nasi goreng\",\"qty\":2},{\"produk\":\"Cola\",\"qty\":2}],\"keterangan\":\"Colanya jangan pake lama\"}]";
 
 
-    public Order(String orderNumber, String orderDate) {
-        this.setmOrderNumber(orderNumber);
-        this.setDate_order(orderDate);
+    private String tanggal, keterangan;
+    private int no_meja, items;
+    private List<Detail> detail;
 
+
+    public Order(int no_meja, String tanggal, String keterangan, int items, List<Detail> detail) {
+        this.no_meja = no_meja;
+        this.tanggal = tanggal;
+        this.keterangan = keterangan;
+        this.items = items;
+        this.detail = detail;
     }
 
-    public String getmOrderNumber() {
-        return mOrderNumber;
+    public int getNo_meja() {
+        return no_meja;
     }
 
-    public void setmOrderNumber(String mOrderNumber) {
-        this.mOrderNumber = mOrderNumber;
+
+    public String getTanggal() {
+        return tanggal;
     }
 
-    public String getDate_order() {
-        return mOrderDate;
+
+    public String getKeterangan() {
+        return keterangan;
     }
 
-    public void setDate_order(String date_order) {
-        this.mOrderDate = date_order;
+
+    public int getItems() {
+        return items;
     }
+
+
+    public List<Detail> getDetail() {
+        return detail;
+    }
+
+
 }
