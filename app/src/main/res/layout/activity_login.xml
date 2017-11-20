@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< Updated upstream
     tools:context="com.geeksquad.android.tubes.activity.LoginActivity">
 
     <ImageView
@@ -23,6 +24,10 @@
         android:src="@drawable/pakbroto" />
 
     <LinearLayout
+=======
+    tools:context="com.geeksquad.android.tubes.login">
+    <android.support.v7.widget.CardView
+>>>>>>> Stashed changes
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/broto"
@@ -58,6 +63,7 @@
             android:textColor="@android:color/white"
             android:textColorHint="@android:color/white" />
 
+<<<<<<< Updated upstream
         <Button
             android:id="@+id/login"
             android:layout_width="100dp"
@@ -69,5 +75,8 @@
             android:textAllCaps="true"
             android:textSize="15sp" />
     </LinearLayout>
+=======
+    </android.support.v7.widget.CardView>
+>>>>>>> Stashed changes
 
 </RelativeLayout>
